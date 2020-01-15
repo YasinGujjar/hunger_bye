@@ -1,17 +1,17 @@
-
 import 'package:flutter/material.dart';
-import 'package:hunger_bye/homePage.dart';
-import 'package:hunger_bye/screens/register.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 
-class Login extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _LoginState extends State<Login> {
-  TextEditingController emailcontroller=TextEditingController();
+class _RegisterState extends State<Register> {
+  TextEditingController first_N_controller=TextEditingController();
+   TextEditingController last_N_controller=TextEditingController();
+   TextEditingController emailcontroller=TextEditingController();
    TextEditingController passwordcontroller=TextEditingController();
+    TextEditingController c_passwordcontroller=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +31,57 @@ class _LoginState extends State<Login> {
                 height: MediaQuery.of(context).size.height/2.15,
               ),
               TextFormField(
+                controller: first_N_controller,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: "CentraleSansRegular"
+                ),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      color: Color(0xffd3dde4),
+                      width: 3
+                    )
+                  ),
+                  labelText: "First Name",
+                  labelStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontFamily: "CentraleSansRegular"
+                  )
+                ),
+              ),
+              SizedBox(height: 10,),
+              TextFormField(
+                controller: last_N_controller,
+               
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: "CentraleSansRegular"
+                ),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      color: Color(0xffd3dde4),
+                      width: 3
+                    )
+                  ),
+                  labelText: "Last Name",
+                  labelStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontFamily: "CentraleSansRegular"
+                  )
+                ),
+              ),
+              SizedBox(height: 10,),
+                TextFormField(
                 controller: emailcontroller,
                 style: TextStyle(
                   color: Colors.black,
@@ -54,10 +105,10 @@ class _LoginState extends State<Login> {
                   )
                 ),
               ),
-              SizedBox(height: 20,),
-              TextFormField(
+                SizedBox(height: 10,),
+                  TextFormField(
                 controller: passwordcontroller,
-                obscureText: true,
+                 obscureText: true,
                 style: TextStyle(
                   color: Colors.black,
                   fontFamily: "CentraleSansRegular"
@@ -73,6 +124,32 @@ class _LoginState extends State<Login> {
                     )
                   ),
                   labelText: "Password",
+                  labelStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontFamily: "CentraleSansRegular"
+                  )
+                ),
+              ),
+                SizedBox(height: 10,),
+                  TextFormField(
+                controller: emailcontroller,
+                 obscureText: true,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: "CentraleSansRegular"
+                ),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      color: Color(0xffd3dde4),
+                      width: 3
+                    )
+                  ),
+                  labelText: "Confirm Password",
                   labelStyle: TextStyle(
                     color: Colors.black,
                     fontSize: 17,
@@ -103,7 +180,7 @@ class _LoginState extends State<Login> {
                       ),
                       child: Center(
                         child: Text(
-                          "Login",
+                          "Register",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "CentraleSansRegular",
@@ -116,78 +193,9 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
-              Center(child: Text("Forgot Password?",
-              style: TextStyle(
-                fontFamily: 'CentraleSansRegular',
-                fontSize: 17,
-                color: Colors.black,
-                fontWeight: FontWeight.w600
-                ),)),
-              SizedBox(height: 20,),
-              MaterialButton(
-                minWidth: 330,
-                height: 70,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(
-                    color: Color(0xffD44638),
-                    width: 3
-                  )
-                ),
-                onPressed: ()
-                {
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Register()));
-                },
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Icon(LineAwesomeIcons.google,
-                    color: Color(0xffD44638),
-                    size: 40,),
-                    Text(
-                    "Connect with Google",
-                    style: TextStyle(
-                      color: Color(0xffD44638),
-                      fontFamily: "CentraleSansRegular",
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold
-                    ),
-                  ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20,),
-              MaterialButton(
-                minWidth: 330,
-                height: 70,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(
-                    color: Color(0xff501396),
-                    width: 3
-                  )
-                ),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
-                },
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Text(
-                    "Continue as Guest",
-                    style: TextStyle(
-                      color: Color(0xff501396),
-                      fontFamily: "CentraleSansRegular",
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold
-                    ),
-                  ),
-                  ],
-                ),
-              ),
+                
+             
+             
             ],
           ),
         ),
