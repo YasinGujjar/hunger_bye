@@ -13,23 +13,43 @@ class _RegisterState extends State<Register> {
    TextEditingController passwordcontroller=TextEditingController();
     TextEditingController c_passwordcontroller=TextEditingController();
   @override
-  Widget build(BuildContext context) {
+Widget build(BuildContext context) {
+    double width=MediaQuery.of(context).size.width;
+    double height=MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        width: width,
+        height: height,
+       /*  decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/image1.png"),
             fit: BoxFit.cover,
             alignment: Alignment.topCenter
           )
+        ), */
+
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              flex: 4,
+              child: Container(
+                  decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/image1try.png"),
+            fit: BoxFit.fill,
+            alignment: Alignment.topCenter
+          )
         ),
-        child: Form(
+              )),
+            Expanded(
+              flex: 8,
+                          child: Form(
           child: ListView(
             padding: EdgeInsets.all(10),
             children: <Widget>[
-              SizedBox(
-                height: MediaQuery.of(context).size.height/2.15,
-              ),
+            /*   SizedBox(
+             //   height: MediaQuery.of(context).size.height/2.15,
+              ), */
               TextFormField(
                 controller: first_N_controller,
                 style: TextStyle(
@@ -158,48 +178,57 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               SizedBox(height: 20,),
-              Container(
-                
-                child: Material(
-                  
-                                child: InkWell(
-                    onTap: (){
-                      print("clicked");
-                    },
-                                  child: Container(
-                      width: 330,
-                      height: 60,
-                      
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Color(0xff471a91),
-                            Color(0xff3cabff)
-                          ],
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Register",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: "CentraleSansRegular",
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-                
+           
              
              
             ],
           ),
         ),
+            ),
+              Expanded(
+                flex: 1,
+                              child: InkWell(
+                          child: Container(
+                           width: 330,
+                            height: 60,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(colors: [
+                                  Color(0xff471a91),
+                                  Color(0xff3cabff)
+                                ]),
+                                borderRadius: BorderRadius.circular(6.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Color(0xFF6078ea).withOpacity(.3),
+                                      offset: Offset(0.0, 8.0),
+                                      blurRadius: 8.0)
+                                ]),
+                            child: Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                onTap: () {},
+                                child: Center(
+                                  child: Text("Register",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                           fontFamily: "CentraleSansRegular",
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold)),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        
+              ),
+                
+          ],
+        ),
       ),
     );
   }
+
+
+
+
 }
