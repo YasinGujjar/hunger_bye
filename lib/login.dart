@@ -195,71 +195,85 @@ class _LoginState extends State<Login> {
                   ),
                   SizedBox(height: 20,),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        MaterialButton(
-                          minWidth: 120,
-                          height: 70,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            side: BorderSide(
-                              color: Color(0xffD44638),
-                              width: 3
-                            )
-                          ),
-                          onPressed: ()
-                          {
-                             Navigator.push(context, MaterialPageRoute(builder: (context)=>Register()));
-                          },
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Icon(LineAwesomeIcons.google,
-                              color: Color(0xffD44638),
-                              size: 40,),
-                              Text(
-                              "Connect with Google",
-                              style: TextStyle(
+                        Expanded(
+                          flex: 9,
+                                             child:      MaterialButton(
+                            minWidth: 120,
+                            height: 70,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(
                                 color: Color(0xffD44638),
-                                fontFamily: "CentraleSansRegular",
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold
-                              ),
+                                width: 3
+                              )
                             ),
-                            ],
+                            onPressed: ()
+                            {
+                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Register()));
+                            },
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Icon(LineAwesomeIcons.google,
+                                color: Color(0xffD44638),
+                                size: 40,),
+                                FittedBox(
+                                  fit: BoxFit.contain,
+                                                                  child: Text(
+                                  "Connect with Google",
+                                  style: TextStyle(
+                                    color: Color(0xffD44638),
+                                    fontFamily: "CentraleSansRegular",
+                                  //  fontSize: 18,
+                                    fontWeight: FontWeight.bold
+                                  ),
+                              ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        SizedBox(width: 10,),
-                        MaterialButton(
+                       Expanded(
+                         flex: 1,
+                         child: SizedBox()),
+                        Expanded(
+                          flex: 6,
+                                                  child: MaterialButton(
                       minWidth: 120,
                       height: 70,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(
-                          color: Color(0xff501396),
-                          width: 3
-                        )
+                          borderRadius: BorderRadius.circular(10),
+                          side: BorderSide(
+                            color: Color(0xff501396),
+                            width: 3
+                          )
                       ),
                       onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
                       },
                       child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Text(
-                          "Continue as Guest",
-                          style: TextStyle(
-                            color: Color(0xff501396),
-                            fontFamily: "CentraleSansRegular",
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            FittedBox(
+                              fit: BoxFit.contain,
+                                                          child: Text(
+                              "Continue as Guest",
+                              style: TextStyle(
+                                color: Color(0xff501396),
+                                fontFamily: "CentraleSansRegular",
+                                //fontSize: 12,
+                                fontWeight: FontWeight.bold
+                              ),
                           ),
-                        ),
-                        ],
+                            ),
+                          ],
                       ),
                     ),
+                        ),
                       ],
                     ),
                    
