@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:hunger_bye/screens/explore.dart';
 import 'package:hunger_bye/screens/heart.dart';
+import 'package:hunger_bye/screens/requests.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     Heart(),
     Explore(),
     Container(),
-    Container(),
+    RequestCard(),
     Container(),
   ];
 

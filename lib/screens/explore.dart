@@ -85,6 +85,8 @@ class Explore extends StatelessWidget {
             child: ListView(
               shrinkWrap: true,
               children: <Widget>[
+                Center(child: Text("Patners of HungerBye")),
+
                 ListTile(
                   trailing: Icon(Icons.more_vert),
                   leading: Image.asset("assets/ad1.png"),
@@ -130,6 +132,61 @@ class Explore extends StatelessWidget {
                           fontSize: 15,
                         )),
                 ),
+                Center(child: Text("See More of Patners")),
+                SizedBox(height: 20,),
+                Divider(height: 2,thickness: 2.0,),
+                SizedBox(height: 20,),
+
+                Center(child: Text("Donors of HungerBye")),
+                ListTile(
+                  trailing: Icon(Icons.more_vert),
+                  leading: Image.asset("assets/ad1.png"),
+                  title: Text("Feeding America Society",
+                      style: TextStyle(
+                          fontFamily: "CentraleSansRegular",
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold
+                      )),
+                  subtitle: Text("Oregon",
+                      style: TextStyle(
+                        fontFamily: "CentraleSansRegular",
+                        fontSize: 15,
+                      )),
+                ),
+                ListTile(
+                  trailing: Icon(Icons.more_vert),
+                  leading: Image.asset("assets/ad2.png"),
+                  title: Text("Ubuntu",
+                      style: TextStyle(
+                          fontFamily: "CentraleSansRegular",
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold
+                      )),
+                  subtitle: Text("Maryland",
+                      style: TextStyle(
+                        fontFamily: "CentraleSansRegular",
+                        fontSize: 15,
+                      )),
+                ),
+                ListTile(
+                  trailing: Icon(Icons.more_vert),
+                  leading: Image.asset("assets/ad3.png"),
+                  title: Text("Dallas Morning News",
+                      style: TextStyle(
+                          fontFamily: "CentraleSansRegular",
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold
+                      )),
+                  subtitle: Text("Washington",
+                      style: TextStyle(
+                        fontFamily: "CentraleSansRegular",
+                        fontSize: 15,
+                      )),
+                ),
+                Center(child: Text("See All donors of HungerBye")),
+                SizedBox(height: 5,),
+
+
               ],
             ),
           )
