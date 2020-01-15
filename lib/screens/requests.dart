@@ -43,7 +43,12 @@ class RequestCard extends StatelessWidget {
                                     ],
                                   ),
                                   Row(
-                                    children: <Widget>[cryptoAmount(),],
+                                 //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                   // crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      cryptoAmount(),
+                                      buttons(),
+                                    ],
                                   )
                                 ],
                               ))
@@ -72,12 +77,12 @@ class RequestCard extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: RichText(
         text: TextSpan(
-          text: 'Bitcoin',
+          text: 'Patner',
           style: TextStyle(
               fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
           children: <TextSpan>[
             TextSpan(
-                text: '\nBTC',
+                text: '\nType',
                 style: TextStyle(
                     color: Colors.grey,
                     fontSize: 15,
@@ -111,7 +116,7 @@ class RequestCard extends StatelessWidget {
     return Align(
         alignment: Alignment.topRight,
         child: Icon(
-          Typicons.arrow_sorted_up,
+          Typicons.input_checked,
           color: Colors.green,
           size: 30,
         ));
@@ -121,27 +126,138 @@ class RequestCard extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Padding(
         padding: const EdgeInsets.only(left: 20.0),
-        child: Row(
+        child: Column(
+
           children: <Widget>[
+           SizedBox(height: 10,),
+
             RichText(
               textAlign: TextAlign.left,
+
               text: TextSpan(
-                text: '\n\$12.279',
+                text: 'Item',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 35,
                 ),
                 children: <TextSpan>[
                   TextSpan(
-                      text: '\n0.1349',
+                      text: '\n\$0.1349',
                       style: TextStyle(
                           color: Colors.grey,
                           fontStyle: FontStyle.italic,
                           fontSize: 20,
                           fontWeight: FontWeight.bold)),
+                  TextSpan(
+                      text: '\n  0.1349',
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontStyle: FontStyle.italic,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold)),
+
+
                 ],
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buttons(){
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Padding(
+        padding: const EdgeInsets.only(left:80.0,top: 15),
+        child: Column(
+          children: <Widget>[
+            MaterialButton(
+              minWidth: 100,
+              height: 40,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(
+                      color: Color(0xff501396),
+                      width: 3
+                  )
+              ),
+              onPressed: (){
+
+              },
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Text(
+                    "View",
+                    style: TextStyle(
+                        color: Color(0xff501396),
+                        fontFamily: "CentraleSansRegular",
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            MaterialButton(
+              minWidth: 100,
+              height: 40,
+              color: Color(0xff501396),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(
+                      color: Color(0xff501396),
+                      width: 3
+                  )
+              ),
+              onPressed: (){
+
+              },
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Text(
+                    "Donate",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "CentraleSansRegular",
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+//            Container(
+//              width: 80,
+//              height: 40,
+//              decoration: BoxDecoration(
+//                gradient: LinearGradient(
+//                  colors: [
+//                    Color(0xff471a91),
+//                    Color(0xff3cabff)
+//                  ],
+//                ),
+//              ),
+//              child: Center(
+//                child: Text(
+//                  "Donate",
+//                  style: TextStyle(
+//                      color: Colors.white,
+//                      fontFamily: "CentraleSansRegular",
+//                      fontSize: 18,
+//                      fontWeight: FontWeight.bold
+//                  ),
+//                ),
+//              ),
+//            ),
+
+
           ],
         ),
       ),
