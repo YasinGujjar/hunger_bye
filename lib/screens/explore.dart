@@ -1,10 +1,11 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Container(
       child: Stack(
         children: <Widget>[
           Image(
@@ -20,37 +21,43 @@ class Explore extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Icon(LineAwesomeIcons.search,
-                  color: Colors.white,
-                  size: 30,),
-                ),
+//                Align(
+//                  alignment: Alignment.centerRight,
+//                  child: Icon(LineAwesomeIcons.search,
+//                  color: Colors.white,
+//                  size: 30,),
+//                ),
                 Text(
                   "Explore",
                    style: TextStyle(
                             color: Colors.white,
-                            fontSize: 35,
+                            fontSize: 30,
                             fontFamily: 'CentraleSansRegular'),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                Text(
-                  "Categories",
-                   style: TextStyle(
-                            color: Colors.grey[300],
-                            fontSize: 32,
-                            fontFamily: 'CentraleSansRegular',
-                            fontWeight: FontWeight.w100),
+                Expanded(
+                  flex: 7,
+                  child: AutoSizeText(
+                    "HungerBye",
+                     style: TextStyle(
+                              color: Colors.grey[300],
+                              fontSize: 32,
+                              fontFamily: 'CentraleSansRegular',
+                              fontWeight: FontWeight.w100),
+                  ),
                 ),
-                Text(
-                  "View All",
-                   style: TextStyle(
-                            color: Colors.grey[300],
-                            fontSize: 20,
-                            fontFamily: 'CentraleSansRegular',
-                            fontWeight: FontWeight.w100),
+                Expanded(
+                  flex: 3,
+                  child: AutoSizeText(
+                    "View All",
+                     style: TextStyle(
+                              color: Colors.grey[300],
+                              fontSize: 20,
+                              fontFamily: 'CentraleSansRegular',
+                              fontWeight: FontWeight.w100),
+                  ),
                 ),
                   ],
                 )
@@ -76,6 +83,7 @@ class Explore extends StatelessWidget {
             height: 400,
             width: 400,
             child: ListView(
+              shrinkWrap: true,
               children: <Widget>[
                 ListTile(
                   trailing: Icon(Icons.more_vert),
