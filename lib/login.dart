@@ -101,41 +101,72 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(height: 20,),
-                    Container(
-                      
-                      child: Material(
-                        
-                                      child: InkWell(
-                          onTap: (){
-                            print("clicked");
-                          },
-                                        child: Container(
-                            width: 330,
-                            height: 60,
-                            
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  Color(0xff471a91),
-                                  Color(0xff3cabff)
-                                ],
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Login",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: "CentraleSansRegular",
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold
-                                ),
+
+ InkWell(
+                        child: Container(
+                         width: 330,
+                          height: 60,
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(colors: [
+                                Color(0xff471a91),
+                                Color(0xff3cabff)
+                              ]),
+                              borderRadius: BorderRadius.circular(6.0),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Color(0xFF6078ea).withOpacity(.3),
+                                    offset: Offset(0.0, 8.0),
+                                    blurRadius: 8.0)
+                              ]),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () {},
+                              child: Center(
+                                child: Text("LOGIN",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                         fontFamily: "CentraleSansRegular",
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold)),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+
+                   /*  Material(
+                      
+                                    child: InkWell(
+                        onTap: (){
+                          print("clicked");
+                        },
+                                      child: Container(
+                          width: 330,
+                          height: 60,
+                          
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color(0xff471a91),
+                                Color(0xff3cabff)
+                              ],
+                            ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "CentraleSansRegular",
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ), */
                     SizedBox(height: 20,),
                     Center(child: Text("Forgot Password?",
                     style: TextStyle(
@@ -145,42 +176,61 @@ class _LoginState extends State<Login> {
                       fontWeight: FontWeight.w600
                       ),)),
                     SizedBox(height: 20,),
-                    MaterialButton(
-                      minWidth: 330,
-                      height: 70,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(
-                          color: Color(0xffD44638),
-                          width: 3
-                        )
+                     Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "New User? ",
+                        style: TextStyle(fontFamily: "Poppins-Medium"),
                       ),
-                      onPressed: ()
-                      {
-                         Navigator.push(context, MaterialPageRoute(builder: (context)=>Register()));
-                      },
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Icon(LineAwesomeIcons.google,
-                          color: Color(0xffD44638),
-                          size: 40,),
-                          Text(
-                          "Connect with Google",
-                          style: TextStyle(
-                            color: Color(0xffD44638),
-                            fontFamily: "CentraleSansRegular",
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold
+                      InkWell(
+                        onTap: () {},
+                        child: Text("SignUp",
+                            style: TextStyle(
+                                color: Color(0xFF5d74e3),
+                                fontFamily: "Poppins-Bold")),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 20,),
+                    Row(
+                      children: <Widget>[
+                        MaterialButton(
+                          minWidth: 120,
+                          height: 70,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(
+                              color: Color(0xffD44638),
+                              width: 3
+                            )
+                          ),
+                          onPressed: ()
+                          {
+                             Navigator.push(context, MaterialPageRoute(builder: (context)=>Register()));
+                          },
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(LineAwesomeIcons.google,
+                              color: Color(0xffD44638),
+                              size: 40,),
+                              Text(
+                              "Connect with Google",
+                              style: TextStyle(
+                                color: Color(0xffD44638),
+                                fontFamily: "CentraleSansRegular",
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            ],
                           ),
                         ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20,),
-                    MaterialButton(
-                      minWidth: 330,
+                        SizedBox(width: 10,),
+                        MaterialButton(
+                      minWidth: 120,
                       height: 70,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -208,6 +258,10 @@ class _LoginState extends State<Login> {
                         ],
                       ),
                     ),
+                      ],
+                    ),
+                   
+                    
                   ],
                 ),
               ),
