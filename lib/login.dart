@@ -1,4 +1,5 @@
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hunger_bye/homePage.dart';
 import 'package:hunger_bye/screens/register.dart';
@@ -194,6 +195,7 @@ class _LoginState extends State<Login> {
                   ),
                   SizedBox(height: 20,),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         MaterialButton(
                           minWidth: 120,
@@ -221,7 +223,7 @@ class _LoginState extends State<Login> {
                               style: TextStyle(
                                 color: Color(0xffD44638),
                                 fontFamily: "CentraleSansRegular",
-                                fontSize: 18,
+                                fontSize: 12,
                                 fontWeight: FontWeight.bold
                               ),
                             ),
@@ -251,7 +253,7 @@ class _LoginState extends State<Login> {
                           style: TextStyle(
                             color: Color(0xff501396),
                             fontFamily: "CentraleSansRegular",
-                            fontSize: 18,
+                            fontSize: 12,
                             fontWeight: FontWeight.bold
                           ),
                         ),
