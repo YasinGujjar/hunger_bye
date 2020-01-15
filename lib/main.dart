@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hunger_bye/login.dart';
 import 'package:hunger_bye/screens/requests.dart';
 
 void main() => runApp(MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Dashboard(),
+      home: Login(),
       //MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
