@@ -185,7 +185,9 @@ class _LoginState extends State<Login> {
                         style: TextStyle(fontFamily: "Poppins-Medium"),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Register()));
+                        },
                         child: Text("SignUp",
                             style: TextStyle(
                                 color: Color(0xFF5d74e3),
@@ -211,7 +213,7 @@ class _LoginState extends State<Login> {
                             ),
                             onPressed: ()
                             {
-                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Register()));
+                              
                             },
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -219,18 +221,24 @@ class _LoginState extends State<Login> {
                               children: <Widget>[
                                 Icon(LineAwesomeIcons.google,
                                 color: Color(0xffD44638),
-                                size: 40,),
-                                FittedBox(
-                                  fit: BoxFit.contain,
-                                                                  child: Text(
-                                  "Connect with Google",
-                                  style: TextStyle(
-                                    color: Color(0xffD44638),
-                                    fontFamily: "CentraleSansRegular",
-                                  //  fontSize: 18,
-                                    fontWeight: FontWeight.bold
-                                  ),
+                                size: 30,),
+                                Container(
+                                  height: 70,
+                                 // color: Colors.yellow,
+                                  width: width*0.3,
+                                  child: Center(
+                                    child: AutoSizeText(
+                                        "Connect with Google",
+                                        textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Color(0xffD44638),
+                                        fontFamily: "CentraleSansRegular",
+                                      //  fontSize: 18,
+                                        fontWeight: FontWeight.bold
+                                      ),
+                                      maxLines: 2,
                               ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -258,17 +266,23 @@ class _LoginState extends State<Login> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            FittedBox(
-                              fit: BoxFit.contain,
-                                                          child: Text(
-                              "Continue as Guest",
-                              style: TextStyle(
-                                color: Color(0xff501396),
-                                fontFamily: "CentraleSansRegular",
-                                //fontSize: 12,
-                                fontWeight: FontWeight.bold
-                              ),
+                            Container(
+                              width: width*0.25,
+                              height: 70,
+                              child: Center(
+                                child: AutoSizeText(
+                                  "Continue as Guest",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                   
+                                    color: Color(0xff501396),
+                                    fontFamily: "CentraleSansRegular",
+                                    //fontSize: 12,
+                                    fontWeight: FontWeight.bold
+                                  ),
+                                  maxLines: 2,
                           ),
+                              ),
                             ),
                           ],
                       ),
